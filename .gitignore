@@ -1,0 +1,13 @@
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+
+# Gulp generated  #
+######################
+build
+
+# NPM Generated  #
+######################
+node_modules
