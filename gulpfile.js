@@ -4,7 +4,6 @@ const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
-const sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('html', function(){
   return gulp.src('source/*.html')
@@ -19,13 +18,11 @@ gulp.task('css', function(){
 
 gulp.task('js', function(){
   return gulp.src('source/js/*.js')
-    .pipe(sourcemaps.init())
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('build/js'))
     .pipe(rename('scripts.min.js'))
     .pipe(babel({presets: ['es2015']}))
     .pipe(uglify())
-    .pipe(sourcemaps.write())
     .pipe(gulp.dest('build/js'))
 });
 
