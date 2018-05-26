@@ -50,7 +50,7 @@ p {
 	bottom: 0;
 	left: 0;
 	margin: auto;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 	width: 180px;
 	height: 180px;
 	float: none;
@@ -68,7 +68,7 @@ p {
 	bottom: 0;
 	left: 0;
 	margin: auto;
-	padding: 0 0 20px;
+	padding: 0 0 40px;
 }
 .footer {
 	position: relative;
