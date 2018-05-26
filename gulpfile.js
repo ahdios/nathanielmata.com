@@ -4,6 +4,7 @@ const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
+const imagemin = require('gulp-imagemin');
 
 gulp.task('html', function(){
   return gulp.src('source/*.html')
@@ -11,13 +12,13 @@ gulp.task('html', function(){
 });
 
 gulp.task('css', function(){
-  return gulp.src('source/css/*.css')
+  return gulp.src('source/css/**/*.css')
     .pipe(minifyCSS())
     .pipe(gulp.dest('build/css'))
 });
 
 gulp.task('js', function(){
-  return gulp.src('source/js/*.js')
+  return gulp.src('source/js/**/*.js')
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('build/js'))
     .pipe(rename('scripts.min.js'))
@@ -28,7 +29,9 @@ gulp.task('js', function(){
 
 gulp.task('img', () => {
   return gulp.src('source/img/**/*')
+    .pipe(imagemin())
     .pipe(gulp.dest('build/img'));
 });
+
 
 gulp.task('build', [ 'html', 'css', 'js', 'img' ]);
