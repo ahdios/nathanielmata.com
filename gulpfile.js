@@ -33,5 +33,4 @@ gulp.task('img', () => {
     .pipe(gulp.dest('build/img'));
 });
 
-
-gulp.task('build', [ 'html', 'css', 'js', 'img' ]);
+gulp.task('build', gulp.parallel('html', 'css', 'js', 'img'));
