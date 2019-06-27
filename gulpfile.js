@@ -22,7 +22,7 @@ gulp.task('js', function(){
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('build/js'))
     .pipe(rename('scripts.min.js'))
-    .pipe(babel({presets: ['es2015']}))
+    .pipe(babel({presets: ['@babel/env']}))
     .pipe(uglify())
     .pipe(gulp.dest('build/js'))
 });
