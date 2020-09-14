@@ -90,7 +90,8 @@ p {
 }
 .footer__inner li {
 	display: inline-block;
-	list-style: none;
+  list-style: none;
+  margin: 0 4px;
 }
 .footer__inner a.icon {
 	display: inline-block;
