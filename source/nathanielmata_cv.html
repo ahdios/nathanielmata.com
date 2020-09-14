@@ -71,6 +71,10 @@
       text-decoration: none;
     }
 
+    a:hover {
+      opacity: 0.75;
+    }
+
     ul {
       margin: 8px 0;
     }
@@ -91,6 +95,11 @@
       text-decoration: none;
       font-style: normal;
       margin-bottom: 36px;
+    }
+
+    header a:hover {
+      color: rgba(203, 221, 251, 1);
+      text-decoration: underline;
     }
 
     header h1 {
@@ -135,6 +144,10 @@
       content: "";
     }
 
+    .education .section__inner>.desc__title {
+      margin-top: 4px;
+    }
+
     .section__inner {
       margin: 12px 24px;
     }
@@ -146,6 +159,25 @@
 
     .desc__title>span:last-child::after {
       content: ""
+    }
+
+    @media screen and (max-width: 320px) {
+      header h1 {
+        font-size: 1.4em;
+      }
+
+      header address {
+        position: relative;
+        right: unset;
+      }
+
+      header address li {
+        font-size: 0.9em;
+      }
+
+      .education .section__inner>.desc__title {
+        margin-top: 8px;
+      }
     }
   </style>
 </head>
@@ -261,7 +293,7 @@
         </div>
 
       </section>
-      <section id="education">
+      <section id="education" class="education">
         <h2>Education</h2>
         <div class="section__inner">
           <div class="desc__title">
