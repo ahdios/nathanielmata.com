@@ -34,7 +34,7 @@
       max-width: 800px;
       margin: 24px auto;
       text-align: center;
-      font-size: 24px;
+      font-size: 20px;
       font-weight: bold;
       text-decoration: underline;
     }
@@ -159,6 +159,12 @@
 
     .desc__title>span:last-child::after {
       content: ""
+    }
+
+    @media screen and (max-width: 420px) {
+      .container {
+        margin-bottom: 0;
+      }
     }
 
     @media screen and (max-width: 320px) {
