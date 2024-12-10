@@ -4,32 +4,30 @@ const concat = require('gulp-concat');
 const rename = require('gulp-rename');
 const uglify = require('gulp-uglify');
 const babel = require('gulp-babel');
-const imagemin = require('gulp-imagemin');
 
-gulp.task('html', function(){
+gulp.task('html', function () {
   return gulp.src('source/*.html')
     .pipe(gulp.dest('build'))
 });
 
-gulp.task('css', function(){
+gulp.task('css', function () {
   return gulp.src('source/css/**/*.css')
     .pipe(minifyCSS())
     .pipe(gulp.dest('build/css'))
 });
 
-gulp.task('js', function(){
+gulp.task('js', function () {
   return gulp.src('source/js/**/*.js')
     .pipe(concat('scripts.js'))
     .pipe(gulp.dest('build/js'))
     .pipe(rename('scripts.min.js'))
-    .pipe(babel({presets: ['@babel/env']}))
+    .pipe(babel({ presets: ['@babel/env'] }))
     .pipe(uglify())
     .pipe(gulp.dest('build/js'))
 });
 
 gulp.task('img', () => {
-  return gulp.src('source/img/**/*')
-    .pipe(imagemin())
+  return gulp.src('source/img/**/*', { encoding: false })
     .pipe(gulp.dest('build/img'));
 });
 
